@@ -16,8 +16,14 @@ class VariantsController < ApplicationController
     @product = Product.find(params[:product_id])
     @variant = @product.variants.find(params[:id])
     @variant.stock = @variant.stock-1
-    @variant.save
-    redirect_to product_path(@product)
+    if @variant.stock < 0
+		flash[:notice] = "No stock!"
+	  redirect_to product_path(@product)
+	else
+		@variant.save
+    redirect_to @product
+    end
+    
   	end
   	
 	private
