@@ -1,0 +1,14 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= variant.name %>
+</p>
+ 
+<p>
+  <strong>Stock:</strong>
+  <%= variant.stock %>
+
+  <%= link_to 'Gift ', [variant.product, variant],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

@@ -1,0 +1,14 @@
+
+<%= form_with(model: [ @product, @product.variants.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :stock %><br>
+    <%= form.text_field :stock %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
